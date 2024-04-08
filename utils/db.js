@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-05-27 09:24:43
  * @Description: db helpers
  */
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const config = require("../config");
 const errcode = require('../utils/errcode');
 
