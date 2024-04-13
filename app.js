@@ -8,11 +8,11 @@ const helmet = require('helmet')
 // const compression = require('compression');
 const routeMiddleware = require('./routes/index');
 const ws = require('./utils/ws');
+const { initializeSocket } = require('./utils/io');
 const app = express();
 
 const server = http.createServer(app);
-const io = require('socket.io')(server);
-
+const io = initializeSocket(server);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

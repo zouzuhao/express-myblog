@@ -26,10 +26,8 @@ class Database {
   get(sql, params, callback) {
     return new Promise((resolve, reject) => {
       this.db.get(sql, params, (err, row) => {
-        console.log(sql, params);
         if (err) {
           reject(err.message);
-          console.log("错误");
         } else {
           if (callback) callback(row);
           resolve(row);
@@ -61,10 +59,8 @@ class Database {
           count++;
           if (count === sqls.length) {
             resolve(arr);
-            console.log(arr);
           }
         }, (err) => {
-          console.log(err);
           reject(err.message);
         });
       }
