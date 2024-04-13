@@ -6,10 +6,8 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const helmet = require('helmet')
 // const compression = require('compression');
-
 const routeMiddleware = require('./routes/index');
 const ws = require('./utils/ws');
-
 const app = express();
 
 const server = http.createServer(app);
@@ -70,5 +68,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+// app.use(history());
 
 module.exports = app;

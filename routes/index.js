@@ -8,6 +8,7 @@ const CategoryController = require('../controllers/category');
 const CommentController = require('../controllers/comment');
 const ReplyController = require('../controllers/reply');
 const ChatgptController = require('../controllers/chatgpt');
+const MsgController = require('../controllers/messages');
 
 module.exports = function(app) {
 	app.use(BaseController);
@@ -20,4 +21,5 @@ module.exports = function(app) {
 	app.use('/comment', CommentController);
 	app.use('/reply', ReplyController);
 	app.use('/chatgpt', ChatgptController);
+	app.use('/msg', MsgController);
 };
